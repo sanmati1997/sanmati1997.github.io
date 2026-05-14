@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanmati Sawalwade — ML Engineer · Builder · Researcher</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="editorial.css" />
+
+  <script>
+    // Apply ?palette=N before paint (used by themes.html previews)
+    (function() {
+      const PALS = [
+        {bg:'#F1ECE0',bgAlt:'#E8E1D2',ink:'#100E0B',ink2:'#4A453C',ink3:'#7C7669',rule:'#C9C0AB',accent:'#DE3A1F'},
+        {bg:'#0E0E0C',bgAlt:'#1A1916',ink:'#F1ECE0',ink2:'#C9C0AB',ink3:'#7C7669',rule:'#2A2823',accent:'#D7FF3A'},
+        {bg:'#F4F2EC',bgAlt:'#E9E6DC',ink:'#0C1A33',ink2:'#3D4A66',ink3:'#7C8499',rule:'#C7C3B6',accent:'#1F46D6'},
+        {bg:'#EEE7D6',bgAlt:'#E2D9C2',ink:'#2A1A0F',ink2:'#5C4730',ink3:'#8A765A',rule:'#C9BC9C',accent:'#B8631C'}
+      ];
+      const i = parseInt(new URLSearchParams(location.search).get('palette'), 10);
+      if (!isNaN(i) && PALS[i]) {
+        const p = PALS[i], r = document.documentElement.style;
+        r.setProperty('--bg',p.bg); r.setProperty('--bg-alt',p.bgAlt);
+        r.setProperty('--ink',p.ink); r.setProperty('--ink-2',p.ink2);
+        r.setProperty('--ink-3',p.ink3); r.setProperty('--rule',p.rule);
+        r.setProperty('--accent',p.accent);
+      }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- NAV                                                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-id">SS <em>— Portfolio · MMXXVI</em></div>
+  <div class="nav-clock" id="clock">BOSTON · 00:00 PT</div>
+  <div class="nav-links">
+    <a href="#work" data-section="work">Work</a>
+    <a href="#projects" data-section="projects">Projects</a>
+    <a href="#skills" data-section="skills">Skills</a>
+    <a href="#education" data-section="education">Education</a>
+    <a href="#awards" data-section="awards">Awards</a>
+    <a href="#contact" data-section="contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- HERO                                                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<header class="hero" data-screen-label="Hero">
+
+  <div class="hero-meta">
+    <div><span class="pulse"></span>Available — Internship & Full-Time, Summer ’26</div>
+    <div style="text-align:center;"><b>N° 001</b> &nbsp;/&nbsp; The Portfolio</div>
+    <div style="text-align:right;">Vol. I · Issue 1 · Spring MMXXVI</div>
+  </div>
+
+  <h1 class="hero-name">
+    <span class="first">Sanmati</span>
+    <span class="last">Sawalwade<span class="amp">.</span></span>
+  </h1>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Machine Learning Engineer</span><span class="dot">✦</span>
+      <span>Full-Stack Builder</span><span class="dot">✦</span>
+      <span>Data Scientist</span><span class="dot">✦</span>
+      <span>Founder</span><span class="dot">✦</span>
+      <span>Researcher</span><span class="dot">✦</span>
+      <span>Machine Learning Engineer</span><span class="dot">✦</span>
+      <span>Full-Stack Builder</span><span class="dot">✦</span>
+      <span>Data Scientist</span><span class="dot">✦</span>
+      <span>Founder</span><span class="dot">✦</span>
+      <span>Researcher</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <div class="hero-row">
+    <p class="hero-desc">
+      M.S. Information Systems at Northeastern. I&rsquo;ve shipped
+      <em style="font-style:italic;">three production ML models</em> to
+      <em style="font-style:italic;">one million users</em> &mdash; and counted the dollars they moved.
+    </p>
+    <div class="hero-stat">
+      <span class="n">1M+</span>
+      <span class="l">Users served in production</span>
+    </div>
+    <div class="hero-stat">
+      <span class="n">$200K</span>
+      <span class="l">Cumulative business impact</span>
+    </div>
+    <div class="hero-stat">
+      <span class="n">4.0</span>
+      <span class="l">GPA · Northeastern</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WORK                                                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="work" data-screen-label="Work">
+  <div class="shell">
+    <header class="section-head reveal">
+      <div class="section-num">N° 01</div>
+      <h2 class="section-title">Where I&rsquo;ve <em>built things</em></h2>
+      <div class="section-kicker">A working résumé. Four engagements,<br>one founder &rsquo;s table.</div>
+    </header>
+
+    <div class="exp stagger">
+
+      <article class="exp-row reveal">
+        <div class="exp-year">SEP 2022 &mdash;<br>DEC 2023</div>
+        <div>
+          <div class="exp-co">Audifytech</div>
+          <div class="exp-role">Software Engineer — Bengaluru</div>
+          <ul class="exp-bullets">
+            <li>Built and deployed a production ML classification model (<b>0.82 AUC-ROC</b>) in Python/Scikit-learn serving <b>1M+ users</b>; ran Bayesian A/B testing across <b>15+ experiments</b>, lifting D7 retention 7% and protecting $140K+ ARR.</li>
+            <li>Engineered an Airflow batch pipeline clustering 100K+ users (K-Means + DBSCAN); built embeddings and a retrieval layer powering a recommender with <b>23% precision lift</b>.</li>
+            <li>Designed production monitoring &mdash; structured logging, drift tracking, latency profiling, SHAP feature importance &mdash; at <b>sub-100ms p95</b>.</li>
+          </ul>
+        </div>
+        <div class="exp-metrics">
+          <div class="exp-metric"><span class="n">+7%</span><span class="l">D7 Retention</span></div>
+          <div class="exp-metric"><span class="n">$140K</span><span class="l">ARR Protected</span></div>
+          <div class="exp-metric"><span class="n">0.82</span><span class="l">AUC-ROC</span></div>
+          <div class="exp-metric"><span class="n">100ms</span><span class="l">p95 Latency</span></div>
+        </div>
+      </article>
+
+      <article class="exp-row reveal">
+        <div class="exp-year">SEP 2021 &mdash;<br>DEC 2021</div>
+        <div>
+          <div class="exp-co">Gameskraft &nbsp;<span style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-3);">· $2.3B UNICORN</span></div>
+          <div class="exp-role">Software Engineer Intern — Bengaluru</div>
+          <ul class="exp-bullets">
+            <li>Built ensemble models (logistic regression + random forests) on a <b>10M+ event dataset</b>; surfaced key LTV drivers, reducing first-week churn 12% across 3 products.</li>
+            <li>Executed hypothesis testing and survival analysis across <b>15+ production releases</b> &mdash; zero post-release regressions.</li>
+          </ul>
+        </div>
+        <div class="exp-metrics">
+          <div class="exp-metric"><span class="n">&minus;12%</span><span class="l">First-Week Churn</span></div>
+          <div class="exp-metric"><span class="n">10M+</span><span class="l">Users Reached</span></div>
+          <div class="exp-metric"><span class="n">0</span><span class="l">Post-Release Regressions</span></div>
+        </div>
+      </article>
+
+      <article class="exp-row reveal">
+        <div class="exp-year">NOV 2020 &mdash;<br>AUG 2021</div>
+        <div>
+          <div class="exp-co">Pocket52</div>
+          <div class="exp-role">Software Engineer Intern</div>
+          <ul class="exp-bullets">
+            <li>Mined <b>100K+ onboarding journeys</b> via SQL funnel analysis; identified 3 statistically significant drop-offs and drove a UX redesign lifting conversion 4pp and unlocking <b>$120K+ incremental MRR</b> in 60 days.</li>
+            <li>Shipped automated BI dashboards (Python · SQL · Tableau) eliminating <b>80% of manual reporting</b>.</li>
+          </ul>
+        </div>
+        <div class="exp-metrics">
+          <div class="exp-metric"><span class="n">+4pp</span><span class="l">Conversion</span></div>
+          <div class="exp-metric"><span class="n">$120K</span><span class="l">MRR Unlocked</span></div>
+          <div class="exp-metric"><span class="n">80%</span><span class="l">Reporting Automated</span></div>
+        </div>
+      </article>
+
+      <article class="exp-row reveal">
+        <div class="exp-year">JUL 2019 &mdash;<br>OCT 2020</div>
+        <div>
+          <div class="exp-co">Dota2booststriker</div>
+          <div class="exp-role">Founder &amp; Full-Stack Engineer — Kolhapur</div>
+          <ul class="exp-bullets">
+            <li>Founded and architected a full-stack platform with Docker, REST APIs, and payment integration; scaled to <b>$16K+ ARR by Month 3</b> with 4.8/5.0 rating, 95%+ retention, and 200+ transactions.</li>
+          </ul>
+        </div>
+        <div class="exp-metrics">
+          <div class="exp-metric"><span class="n">$16K</span><span class="l">ARR · Month 3</span></div>
+          <div class="exp-metric"><span class="n">4.8</span><span class="l">Avg Rating</span></div>
+          <div class="exp-metric"><span class="n">95%</span><span class="l">Retention</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PROJECTS                                              -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="projects" data-screen-label="Projects">
+  <div class="shell">
+    <header class="section-head reveal">
+      <div class="section-num">N° 02</div>
+      <h2 class="section-title">Selected <em>work</em></h2>
+      <div class="section-kicker">Shipped. Measured.<br>Sometimes both.</div>
+    </header>
+
+    <div class="proj-grid stagger">
+
+      <article class="proj reveal">
+        <div class="proj-head">
+          <span class="proj-num">P / 01</span>
+          <span>Full-Stack · LIVE</span>
+        </div>
+        <h3 class="proj-title">FirstApply — <em>real-time</em> internship intelligence.</h3>
+        <p class="proj-desc">Scrapes 6+ live job boards (LinkedIn, Indeed, Greenhouse, YC, HackerNews) in real time. NLP-powered Claude resume scoring ranks 2,600+ roles across up to 5 candidate profiles with live push notifications.</p>
+        <div class="proj-stat">▲ 3× callback rate · 2,600+ roles aggregated live</div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Python</span><span>FastAPI</span><span>Claude</span><span>Postgres</span><span>Playwright</span><span>Docker</span>
+          </div>
+          <a class="proj-link" href="https://firstapply-production-fb41.up.railway.app" target="_blank" rel="noopener">Live Demo &nbsp;→</a>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-head">
+          <span class="proj-num">P / 02</span>
+          <span>Deep Learning</span>
+        </div>
+        <h3 class="proj-title">COVID-19 CT scan <em>classifier</em>.</h3>
+        <p class="proj-desc">Deep-learning triage of chest CT scans into COVID / Pneumonia / Normal. Fine-tuned EfficientNetB0 via two-stage transfer learning with class-weighted loss; robustness via 5-fold stratified CV.</p>
+        <div class="proj-stat">93.4% test acc · 0.91–0.97 per-class F1 · 5-fold CV 86.7% ± 1.2%</div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Python</span><span>TensorFlow</span><span>EfficientNetB0</span><span>Transfer Learning</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-head">
+          <span class="proj-num">P / 03</span>
+          <span>RAG · LLM Ops</span>
+        </div>
+        <h3 class="proj-title">NLP retrieval + <em>LLM inference</em>.</h3>
+        <p class="proj-desc">Multi-stage RAG with Transformer embeddings, semantic chunking, and Pinecone vector search for sub-200ms retrieval over 50K+ documents. LangChain multi-agent orchestration with full observability.</p>
+        <div class="proj-stat">89% answer relevance · sub-200ms retrieval · 50K+ docs</div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>LangChain</span><span>Pinecone</span><span>Transformers</span><span>FastAPI</span><span>Docker</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-head">
+          <span class="proj-num">P / 04</span>
+          <span>DevOps · Automation</span>
+        </div>
+        <h3 class="proj-title">Automated release <em>orchestration</em>.</h3>
+        <p class="proj-desc">CI/CD pipeline pulling JIRA tickets, validating test gates, triggering Docker builds, and posting go/no-go status to Slack. Auto-generated launch readiness scorecard as a single source of truth.</p>
+        <div class="proj-stat">↓ 60% manual coordination · real-time go/no-go scorecard</div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Python</span><span>GitHub Actions</span><span>Docker</span><span>JIRA</span><span>Slack</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-head">
+          <span class="proj-num">P / 05</span>
+          <span>Observability · Real-Time</span>
+        </div>
+        <h3 class="proj-title">Live deployment <em>health tracker</em>.</h3>
+        <p class="proj-desc">Real-time dashboard tracking rollout %, error rates, and rollback triggers across staged releases. Anomaly alerts wired directly into the deployment pipeline &mdash; mean time to detect slashed from hours to under two minutes.</p>
+        <div class="proj-stat">↓ MTTD: hours → &lt; 2 min · real-time rollback triggers</div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span>Python</span><span>FastAPI</span><span>Postgres</span><span>Grafana</span><span>Docker</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SKILLS                                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="skills" data-screen-label="Skills">
+  <div class="shell">
+    <header class="section-head reveal">
+      <div class="section-num">N° 03</div>
+      <h2 class="section-title">The <em>toolkit</em></h2>
+      <div class="section-kicker">Used in anger.<br>Not just on the résumé.</div>
+    </header>
+
+    <div class="skills stagger">
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-title">Languages</div>
+        <div class="sk-list">
+          <span>Python</span><span>SQL</span><span>JavaScript / TypeScript</span><span>Java</span><span>C / C++</span><span>R</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-title">ML &amp; AI</div>
+        <div class="sk-list">
+          <span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>XGBoost</span><span>LightGBM</span><span>Hugging Face</span><span>LLMs · GPT · Claude</span><span>CNNs</span><span>SHAP</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-title">Data Engineering</div>
+        <div class="sk-list">
+          <span>Apache Spark</span><span>PySpark</span><span>Airflow</span><span>ETL pipelines</span><span>Batch processing</span><span>Data warehousing</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-title">Databases</div>
+        <div class="sk-list">
+          <span>PostgreSQL</span><span>BigQuery</span><span>MongoDB</span><span>Pinecone</span><span>Weaviate</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-title">Cloud &amp; DevOps</div>
+        <div class="sk-list">
+          <span>AWS</span><span>Docker</span><span>FastAPI</span><span>REST APIs</span><span>CI/CD</span><span>GitHub Actions</span><span>Production ML pipelines</span><span>Model monitoring</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-title">Analytics &amp; BI</div>
+        <div class="sk-list">
+          <span>Tableau</span><span>Power BI</span><span>A/B testing</span><span>Bayesian methods</span><span>Cohort &amp; funnel analysis</span><span>GA4</span><span>Mixpanel</span><span>Hypothesis testing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- EDUCATION                                             -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="education" data-screen-label="Education">
+  <div class="shell">
+    <header class="section-head reveal">
+      <div class="section-num">N° 04</div>
+      <h2 class="section-title">School of <em>thought</em></h2>
+      <div class="section-kicker">Two degrees,<br>one curiosity.</div>
+    </header>
+
+    <div class="edu stagger">
+
+      <article class="edu-card reveal">
+        <div class="edu-meta"><span>San Jose, CA</span><span>Expected May 2027</span></div>
+        <div class="edu-school">Northeastern University</div>
+        <div class="edu-deg">M.S. Information Systems</div>
+        <div class="edu-gpa">GPA &nbsp;·&nbsp; 4.00 / 4.00</div>
+        <div class="edu-cw">Machine Learning &nbsp;·&nbsp; Data Science Engineering &nbsp;·&nbsp; Algorithms &amp; Data Structures &nbsp;·&nbsp; Application Engineering &nbsp;·&nbsp; Business Analysis &nbsp;·&nbsp; Project Management</div>
+      </article>
+
+      <article class="edu-card reveal">
+        <div class="edu-meta"><span>Kolhapur, India</span><span>March 2022</span></div>
+        <div class="edu-school">Dr. D. Y. Patil College of Engineering</div>
+        <div class="edu-deg">B.E. Mechanical Engineering</div>
+        <div class="edu-cw">Machine Design &nbsp;·&nbsp; Manufacturing Processes &nbsp;·&nbsp; Mechanics of Materials &nbsp;·&nbsp; Thermodynamics &nbsp;·&nbsp; Fluid Mechanics &nbsp;·&nbsp; CAD/CAM &nbsp;·&nbsp; Industrial Engineering</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- AWARDS                                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="awards" data-screen-label="Awards">
+  <div class="shell">
+    <header class="section-head reveal">
+      <div class="section-num">N° 05</div>
+      <h2 class="section-title">In <em>the record</em></h2>
+      <div class="section-kicker">Things that made it past<br>the proof-of-concept stage.</div>
+    </header>
+
+    <div class="ach stagger">
+
+      <article class="ach-card reveal">
+        <div class="ach-num">A / 01</div>
+        <h3 class="ach-title">Three production ML models, at scale.</h3>
+        <p class="ach-desc">1M+ users across three shipped models — 7% retention lift, 12% churn reduction, 4pp conversion lift. <b>$200K+ cumulative, measurable impact.</b></p>
+      </article>
+
+      <article class="ach-card reveal">
+        <div class="ach-num">A / 02</div>
+        <h3 class="ach-title">Google Play Users&rsquo; Choice nominee, 2023.</h3>
+        <p class="ach-desc"><i>Football World</i> &mdash; one of eight apps globally nominated. Owned the complete release lifecycle from alpha to production.</p>
+      </article>
+
+      <article class="ach-card reveal">
+        <div class="ach-num">A / 03</div>
+        <h3 class="ach-title">Published researcher, IJET Vol. 8 (2022).</h3>
+        <p class="ach-desc"><i>&ldquo;Waste Reduction Using Value Stream Mapping&rdquo;</i> &mdash; applied VSM optimization to reduce lead time 27% via bottleneck elimination and cross-functional coordination.</p>
+      </article>
+
+      <article class="ach-card reveal">
+        <div class="ach-num">A / 04</div>
+        <h3 class="ach-title">Perfect GPA while shipping in production.</h3>
+        <p class="ach-desc">Holding 4.0 / 4.0 at Northeastern while architecting and shipping <i>FirstApply</i> solo — real product, real users, real revenue pipeline.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CONTACT                                               -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="contact" id="contact" data-screen-label="Contact">
+  <div class="shell">
+    <header class="section-head reveal" style="border-bottom:none;margin-bottom:24px;">
+      <div class="section-num">N° 06</div>
+      <h2 class="section-title">The <em>last page</em></h2>
+      <div class="section-kicker">Always be<br>shipping.</div>
+    </header>
+
+    <h2 class="contact-h reveal">
+      Let&rsquo;s build<br>
+      <em>something</em> <span class="small" style="display:inline;">good.</span>
+    </h2>
+
+    <div class="contact-grid reveal">
+      <a href="mailto:sawalwade.s@northeastern.edu">
+        <div class="c-label">Email</div>
+        <div class="c-val">sawalwade.s<br>@northeastern.edu</div>
+      </a>
+      <a href="tel:4088298844">
+        <div class="c-label">Phone</div>
+        <div class="c-val">(408) 829-8844</div>
+      </a>
+      <a href="https://linkedin.com/in/sanmati-sawalwade" target="_blank" rel="noopener">
+        <div class="c-label">LinkedIn</div>
+        <div class="c-val">/in/sanmati-sawalwade</div>
+      </a>
+      <a href="https://github.com/sanmati1997" target="_blank" rel="noopener">
+        <div class="c-label">GitHub</div>
+        <div class="c-val">github.com/sanmati1997</div>
+      </a>
+    </div>
+
+    <div class="foot">
+      <span>© MMXXVI &nbsp;·&nbsp; Sanmati Rajiv Sawalwade</span>
+      <span>Set in Instrument Serif &amp; DM Sans</span>
+      <span>Boston, Massachusetts</span>
+    </div>
+  </div>
+</section>
+
+<!-- Tweaks root -->
+<div id="tweaks-root"></div>
+
+<script src="editorial.js"></script>
+
+<!-- React + Babel for tweaks panel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="editorial-tweaks.jsx"></script>
+
+</body>
+</html>

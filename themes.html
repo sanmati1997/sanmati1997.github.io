@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Theme Previews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #F1ECE0; color: #100E0B; font-family: 'DM Sans', system-ui, sans-serif; }
+    body { padding: 56px 40px 80px; min-height: 100vh; }
+
+    .head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px;
+      max-width: 1480px;
+      margin: 0 auto 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #C9C0AB;
+    }
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: .95;
+      letter-spacing: -.025em;
+    }
+    h1 em { color: #DE3A1F; font-style: italic; }
+    .head p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #4A453C;
+      text-align: right;
+      max-width: 36ch;
+      line-height: 1.6;
+    }
+
+    .grid {
+      max-width: 1480px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .card {
+      display: flex; flex-direction: column;
+      gap: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card-frame {
+      position: relative;
+      border: 1px solid #C9C0AB;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s;
+    }
+    .card-frame img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      display: block;
+      transition: transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+    .card:hover .card-frame {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0,0,0,.18);
+    }
+    .card:hover .card-frame img { transform: scale(1.02); }
+
+    .card-meta {
+      display: grid;
+      grid-template-columns: 32px 1fr auto auto;
+      align-items: baseline;
+      gap: 14px;
+      padding-top: 6px;
+    }
+    .card-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: #7C7669;
+    }
+    .card-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -.01em;
+    }
+    .swatches { display: flex; gap: 0; border: 1px solid rgba(0,0,0,.12); border-radius: 4px; overflow: hidden; }
+    .swatches div { width: 18px; height: 18px; }
+    .card-cta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #DE3A1F;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
+
+    .foot {
+      max-width: 1480px;
+      margin: 64px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #C9C0AB;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #7C7669;
+    }
+    .foot a {
+      color: #100E0B;
+      text-decoration: none;
+      border-bottom: 1px solid #DE3A1F;
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      body { padding: 32px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="head">
+    <h1>Pick a <em>direction</em>.</h1>
+    <p>Four palettes, same layout. Click any card to open the live portfolio in that scheme.</p>
+  </header>
+
+  <div class="grid">
+
+    <a class="card" href="index.html?palette=0" target="_blank" rel="noopener">
+      <div class="card-frame"><img src="previews/01-theme.png" alt="Cream and Vermilion preview" /></div>
+      <div class="card-meta">
+        <div class="card-num">01</div>
+        <div class="card-name">Cream / Vermilion</div>
+        <div class="swatches">
+          <div style="background:#F1ECE0"></div>
+          <div style="background:#100E0B"></div>
+          <div style="background:#DE3A1F"></div>
+        </div>
+        <div class="card-cta">Open →</div>
+      </div>
+    </a>
+
+    <a class="card" href="index.html?palette=1" target="_blank" rel="noopener">
+      <div class="card-frame"><img src="previews/02-theme.png" alt="Ink and Electric preview" /></div>
+      <div class="card-meta">
+        <div class="card-num">02</div>
+        <div class="card-name">Ink / Electric</div>
+        <div class="swatches">
+          <div style="background:#0E0E0C"></div>
+          <div style="background:#F1ECE0"></div>
+          <div style="background:#D7FF3A"></div>
+        </div>
+        <div class="card-cta">Open →</div>
+      </div>
+    </a>
+
+    <a class="card" href="index.html?palette=2" target="_blank" rel="noopener">
+      <div class="card-frame"><img src="previews/03-theme.png" alt="Bone and Cobalt preview" /></div>
+      <div class="card-meta">
+        <div class="card-num">03</div>
+        <div class="card-name">Bone / Cobalt</div>
+        <div class="swatches">
+          <div style="background:#F4F2EC"></div>
+          <div style="background:#0C1A33"></div>
+          <div style="background:#1F46D6"></div>
+        </div>
+        <div class="card-cta">Open →</div>
+      </div>
+    </a>
+
+    <a class="card" href="index.html?palette=3" target="_blank" rel="noopener">
+      <div class="card-frame"><img src="previews/04-theme.png" alt="Plaster and Ochre preview" /></div>
+      <div class="card-meta">
+        <div class="card-num">04</div>
+        <div class="card-name">Plaster / Ochre</div>
+        <div class="swatches">
+          <div style="background:#EEE7D6"></div>
+          <div style="background:#2A1A0F"></div>
+          <div style="background:#B8631C"></div>
+        </div>
+        <div class="card-cta">Open →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer class="foot">
+    <span>Sanmati Sawalwade — Portfolio · MMXXVI</span>
+    <span><a href="index.html">← Back to live portfolio</a></span>
+  </footer>
+
+</body>
+</html>

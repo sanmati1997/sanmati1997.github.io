@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanmati Rajiv Sawalwade — ML Engineer · Release Owner · Founder</title>
+  <meta name="description" content="MS Information Systems @ Northeastern · 4.0 GPA · 3 production ML models to 1M+ users · 3+ years owning test validation & release sign-off · $200K+ measurable impact." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="ambient"></div>
+<div class="grid-bg"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- NAV                                                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-logo">
+    <span class="mark">S</span>
+    <span>sanmati.dev</span>
+    <span class="ver">/ v3</span>
+  </div>
+  <div class="nav-links">
+    <a href="#work" data-section="work">Work</a>
+    <a href="#projects" data-section="projects">Projects</a>
+    <a href="#skills" data-section="skills">Skills</a>
+    <a href="#education" data-section="education">Education</a>
+    <a href="#wins" data-section="wins">Wins</a>
+  </div>
+  <a href="#contact" class="nav-cta" data-magnetic>
+    Get in touch <span class="arrow">→</span>
+  </a>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- HERO                                                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="hero" data-screen-label="Hero">
+
+  <div class="hero-status">
+    <span class="live"></span>
+    <span>Available — <b>Summer ’26 Internship</b></span>
+    <span class="sep">·</span>
+    <span><b>Full-Time ’27</b></span>
+    <span class="sep">·</span>
+    <span id="clock">BOS · 00:00 ET</span>
+  </div>
+
+  <h1 class="hero-name">
+    <span class="first">Sanmati Rajiv</span>
+    <span class="last">Sawalwade<span class="cursor"></span></span>
+  </h1>
+
+  <p class="hero-tagline">
+    ML Engineer &amp; release owner who ships to <span class="rotator" id="rotator">1M+ users.</span>
+  </p>
+
+  <p class="hero-desc">
+    M.S. Information Systems @ Northeastern · <b>4.0 GPA</b>. I build ML systems, own end-to-end release execution,
+    and sign off go/no-go decisions at scale. <b>3+ years owning test validation &amp; release sign-off</b>,
+    three production ML models, one founded company, and <b>$200K+ in measurable business impact</b> across a $2.3B unicorn
+    and other production teams.
+  </p>
+
+  <div class="hero-cta-row">
+    <a href="#projects" class="btn btn-p" data-magnetic>
+      See my work <span class="arr">→</span>
+    </a>
+    <a href="#contact" class="btn btn-s">
+      Let’s talk <span class="key">G</span>
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="n"><span data-target="1" data-final="1M+">0</span></span>
+      <span class="l">Users served in production</span>
+    </div>
+    <div class="hero-stat">
+      <span class="n">$<span data-target="200" data-final="200K+">0</span></span>
+      <span class="l">Cumulative business impact</span>
+    </div>
+    <div class="hero-stat">
+      <span class="n"><span data-target="4.0" data-decimals="1">0</span><span class="pop">/</span>4.0</span>
+      <span class="l">GPA at Northeastern</span>
+    </div>
+    <div class="hero-stat">
+      <span class="n"><span data-target="3">0</span></span>
+      <span class="l">Production ML models shipped</span>
+    </div>
+  </div>
+
+  <!-- Currently shipping panel -->
+  <div class="current">
+    <div class="current-head">
+      <span class="pulse"></span>
+      <b>Currently</b>
+    </div>
+    <div class="current-item">
+      <div class="k">Building</div>
+      <div class="v">FirstApply v2 — multi-profile resume scoring</div>
+    </div>
+    <div class="current-item">
+      <div class="k">Learning</div>
+      <div class="v">Distributed Systems · LLM Eval</div>
+    </div>
+    <div class="current-item">
+      <div class="k">Based</div>
+      <div class="v">San Jose, CA → Boston, MA</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PROJECTS                                              -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="projects" data-screen-label="Projects">
+  <div class="shell">
+
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow"><span class="num">01</span> Selected Work</div>
+        <h2 class="section-title">Things I’ve <em>shipped.</em></h2>
+      </div>
+      <div class="section-kicker">Real users.<br>Real revenue.<br>Real impact.</div>
+    </header>
+
+    <!-- Featured -->
+    <article class="featured reveal">
+      <div class="featured-body">
+        <span class="featured-tag"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;"></span> Live · Featured</span>
+        <h3 class="featured-title">FirstApply — <em>real-time</em> internship intelligence platform.</h3>
+        <p class="featured-desc">
+          Full-stack platform scraping 6+ live job boards (LinkedIn · Indeed · Greenhouse · YC · HackerNews) in real time.
+          NLP-powered Claude scoring engine parses resumes, extracts skill vectors, and ranks 2,600+ roles against up to
+          5 candidate profiles with push-notification alerts.
+        </p>
+
+        <div class="featured-metrics">
+          <div class="featured-metric"><span class="n">3×</span><span class="l">Callback Rate</span></div>
+          <div class="featured-metric"><span class="n">2.6K</span><span class="l">Roles Ranked Live</span></div>
+          <div class="featured-metric"><span class="n">&lt; 1s</span><span class="l">Alert Latency</span></div>
+        </div>
+
+        <div class="featured-stack">
+          <span class="chip">Python</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Claude API</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Playwright</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Node.js</span>
+        </div>
+
+        <div class="featured-links">
+          <a href="https://firstapply-production-fb41.up.railway.app" target="_blank" rel="noopener" class="link-btn" data-magnetic>
+            Open live demo →
+          </a>
+          <a href="https://github.com/sanmati1997" target="_blank" rel="noopener" class="link-ghost">
+            Source ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="featured-visual">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="b"></span><span class="b"></span><span class="b"></span>
+            <span class="title">firstapply · ~/ship</span>
+          </div>
+          <div class="terminal-body" id="terminal-body"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Grid -->
+    <div class="proj-grid stagger" style="margin-top:24px;">
+
+      <article class="proj reveal">
+        <div class="proj-head"><span class="num">P / 02</span><span>Deep Learning · Medical</span></div>
+        <h3 class="proj-title">COVID-19 CT scan <em>classifier</em></h3>
+        <p class="proj-desc">
+          Triages chest CT scans into COVID / Pneumonia / Normal. Fine-tuned EfficientNetB0 via two-stage transfer
+          learning with class-weighted loss; robustness validated with 5-fold stratified CV.
+        </p>
+        <div class="proj-stack">
+          <span class="chip">TensorFlow</span>
+          <span class="chip">EfficientNetB0</span>
+          <span class="chip">Scikit-learn</span>
+        </div>
+        <div class="proj-stat">93.4% test acc · 0.91–0.97 F1 · 5-fold CV 86.7% ± 1.2%</div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-head"><span class="num">P / 03</span><span>RAG · LLM Ops</span></div>
+        <h3 class="proj-title">NLP retrieval + <em>LLM inference</em></h3>
+        <p class="proj-desc">
+          Multi-stage RAG with Transformer embeddings, semantic chunking, Pinecone vector search.
+          Sub-200ms retrieval over 50K+ docs. LangChain multi-agent orchestration with full observability.
+        </p>
+        <div class="proj-stack">
+          <span class="chip">LangChain</span>
+          <span class="chip">Pinecone</span>
+          <span class="chip">Transformers</span>
+          <span class="chip">FastAPI</span>
+        </div>
+        <div class="proj-stat">89% answer relevance · &lt;200ms retrieval · 50K+ docs</div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-head"><span class="num">P / 04</span><span>DevOps · Automation</span></div>
+        <h3 class="proj-title">Automated release <em>orchestration</em></h3>
+        <p class="proj-desc">
+          CI/CD pipeline pulling JIRA tickets, validating test gates, triggering Docker builds, and posting
+          go/no-go status to Slack. Auto-generated launch-readiness scorecard as one source of truth.
+        </p>
+        <div class="proj-stack">
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">Docker</span>
+          <span class="chip">JIRA</span>
+          <span class="chip">Slack</span>
+        </div>
+        <div class="proj-stat">↓ 60% manual coordination · real-time go/no-go scorecard</div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-head"><span class="num">P / 05</span><span>Observability · Real-Time</span></div>
+        <h3 class="proj-title">Live deployment <em>health tracker</em></h3>
+        <p class="proj-desc">
+          Real-time dashboard tracking rollout %, error rates, and rollback triggers across staged releases.
+          Anomaly alerts wired into the deployment pipeline — MTTD slashed from hours to under 2 minutes.
+        </p>
+        <div class="proj-stack">
+          <span class="chip">FastAPI</span>
+          <span class="chip">Postgres</span>
+          <span class="chip">Grafana</span>
+          <span class="chip">Docker</span>
+        </div>
+        <div class="proj-stat">↓ MTTD hours → &lt; 2 min · real-time rollback triggers</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- EXPERIENCE                                            -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="work" data-screen-label="Work">
+  <div class="shell">
+
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow"><span class="num">02</span> Where I’ve Built</div>
+        <h2 class="section-title">Working <em>résumé.</em></h2>
+      </div>
+      <div class="section-kicker">Four engagements,<br>one operator’s table.</div>
+    </header>
+
+    <div class="exp stagger">
+
+      <article class="exp-row reveal">
+        <div class="exp-year">
+          SEP 2022<br>– DEC 2023<br>
+        </div>
+        <div>
+          <div class="exp-co">Audifytech</div>
+          <div class="exp-role">SOFTWARE ENGINEER · RELEASE OWNER · BENGALURU</div>
+          <ul class="exp-bullets">
+            <li>Built and deployed a production ML classification model (<b>0.82 AUC-ROC</b>) in Python/Scikit-learn serving <b>1M+ users</b>; ran Bayesian A/B testing across 15+ experiments — lifted D7 retention 7% and protected $140K+ ARR.</li>
+            <li>Owned end-to-end test &amp; release execution; managed test plans, milestones, and launch sign-off across <b>15+ concurrent releases</b> with global engineering teams.</li>
+            <li>Defined launch quality gates — test pass rate, blocker count, drift analysis — as <b>central go/no-go decision owner</b>; escalated release-blocking issues to leadership.</li>
+            <li>Engineered an Airflow batch pipeline clustering 100K+ users (K-Means + DBSCAN); built embeddings + retrieval powering a recommender with <b>23% precision lift</b>.</li>
+            <li>Designed production monitoring — structured logs, drift tracking, latency profiling, SHAP — at <b>sub-100ms p95</b>.</li>
+          </ul>
+        </div>
+        <div class="exp-metrics">
+          <div class="metric-card"><span class="n">+7%</span><span class="l">D7 Retention</span></div>
+          <div class="metric-card"><span class="n">$140K</span><span class="l">ARR Protected</span></div>
+          <div class="metric-card"><span class="n">0.82</span><span class="l">AUC-ROC</span></div>
+          <div class="metric-card"><span class="n">100ms</span><span class="l">P95 Latency</span></div>
+        </div>
+      </article>
+
+      <article class="exp-row reveal">
+        <div class="exp-year">SEP 2021<br>– DEC 2021</div>
+        <div>
+          <div class="exp-co">Gameskraft <span class="tag">$2.3B UNICORN</span></div>
+          <div class="exp-role">SOFTWARE ENGINEER INTERN · BENGALURU</div>
+          <ul class="exp-bullets">
+            <li>Managed release validation and rollout coordination across <b>15+ production launches</b> serving 10M+ users; delivered go/no-go recommendations to leadership and achieved <b>zero post-release regressions</b>.</li>
+            <li>Built ensemble models (logistic regression + random forests) on a <b>10M+ event dataset</b>; surfaced LTV drivers and reduced first-week churn 12% across 3 products.</li>
+            <li>Coordinated multi-team dependencies under tight deadlines — hypothesis testing &amp; survival analysis to validate ML logic with engineering, product, and data teams.</li>
+          </ul>
+        </div>
+        <div class="exp-metrics">
+          <div class="metric-card"><span class="n">−12%</span><span class="l">First-Week Churn</span></div>
+          <div class="metric-card"><span class="n">10M+</span><span class="l">Users Reached</span></div>
+          <div class="metric-card"><span class="n">0</span><span class="l">Regressions</span></div>
+          <div class="metric-card"><span class="n">15+</span><span class="l">Production Releases</span></div>
+        </div>
+      </article>
+
+      <article class="exp-row reveal">
+        <div class="exp-year">NOV 2020<br>– AUG 2021</div>
+        <div>
+          <div class="exp-co">Pocket52</div>
+          <div class="exp-role">SOFTWARE ENGINEER INTERN · BENGALURU</div>
+          <ul class="exp-bullets">
+            <li>Led <b>cross-functional coordination</b> between engineering and design; mined <b>100K+ onboarding journeys</b> via SQL funnel analysis, identified 3 statistically-significant drop-offs, drove a UX redesign lifting conversion 4pp and unlocking <b>$120K+ MRR</b> in 60 days.</li>
+            <li>Shipped automated BI dashboards (Python · SQL · Tableau) eliminating <b>80% of manual reporting</b>.</li>
+          </ul>
+        </div>
+        <div class="exp-metrics">
+          <div class="metric-card"><span class="n">+4pp</span><span class="l">Conversion</span></div>
+          <div class="metric-card"><span class="n">$120K</span><span class="l">MRR Unlocked</span></div>
+          <div class="metric-card"><span class="n">80%</span><span class="l">Reporting Auto</span></div>
+          <div class="metric-card"><span class="n">60d</span><span class="l">Time-to-Ship</span></div>
+        </div>
+      </article>
+
+      <article class="exp-row reveal">
+        <div class="exp-year">JUL 2019<br>– OCT 2020<br><span class="now">FOUNDER</span></div>
+        <div>
+          <div class="exp-co">Dota2booststriker</div>
+          <div class="exp-role">FOUNDER · PRODUCT MANAGER · FULL-STACK ENGINEER · KOLHAPUR</div>
+          <ul class="exp-bullets">
+            <li><b>Sole owner of roadmap, schedule, and full release lifecycle</b>; managed requirements, dev timelines, and prioritization tradeoffs across a small engineering team.</li>
+            <li>Architected a full-stack platform — Docker · REST APIs · payment integration; scaled to <b>$16K+ ARR by Month 3</b> with 4.8/5.0 rating, 95%+ retention, 200+ transactions, and <b>zero downtime</b>.</li>
+          </ul>
+        </div>
+        <div class="exp-metrics">
+          <div class="metric-card"><span class="n">$16K</span><span class="l">ARR · Month 3</span></div>
+          <div class="metric-card"><span class="n">4.8</span><span class="l">Avg Rating</span></div>
+          <div class="metric-card"><span class="n">95%</span><span class="l">Retention</span></div>
+          <div class="metric-card"><span class="n">200+</span><span class="l">Transactions</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SKILLS                                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="skills" data-screen-label="Skills">
+  <div class="shell">
+
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow"><span class="num">03</span> The Toolkit</div>
+        <h2 class="section-title">Things I <em>use daily.</em></h2>
+      </div>
+      <div class="section-kicker">Not just listed.<br>Actually shipped with.</div>
+    </header>
+
+    <div class="sk-grid stagger">
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-head"><div class="sk-cat-name">Languages</div><div class="sk-cat-num">/ 01</div></div>
+        <div class="sk-list">
+          <span class="chip">Python (Advanced)</span><span class="chip">SQL</span><span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span><span class="chip">Java</span><span class="chip">C / C++</span><span class="chip">R</span>
+          <span class="chip">Pandas</span><span class="chip">NumPy</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-head"><div class="sk-cat-name">Machine Learning &amp; AI</div><div class="sk-cat-num">/ 02</div></div>
+        <div class="sk-list">
+          <span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Scikit-learn</span>
+          <span class="chip">XGBoost</span><span class="chip">LightGBM</span><span class="chip">Hugging Face</span>
+          <span class="chip">Transformers</span><span class="chip">LLMs · GPT · Claude</span>
+          <span class="chip">CNNs</span><span class="chip">SHAP</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-head"><div class="sk-cat-name">Data Engineering</div><div class="sk-cat-num">/ 03</div></div>
+        <div class="sk-list">
+          <span class="chip">Apache Spark</span><span class="chip">PySpark</span><span class="chip">Airflow</span>
+          <span class="chip">ETL Pipelines</span><span class="chip">Batch Processing</span><span class="chip">Warehousing</span>
+          <span class="chip">Data Wrangling</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-head"><div class="sk-cat-name">Databases</div><div class="sk-cat-num">/ 04</div></div>
+        <div class="sk-list">
+          <span class="chip">PostgreSQL</span><span class="chip">BigQuery</span><span class="chip">MongoDB</span>
+          <span class="chip">Pinecone</span><span class="chip">Weaviate</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-head"><div class="sk-cat-name">Cloud &amp; DevOps</div><div class="sk-cat-num">/ 05</div></div>
+        <div class="sk-list">
+          <span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">FastAPI</span>
+          <span class="chip">REST APIs</span><span class="chip">CI/CD</span><span class="chip">Git</span><span class="chip">GitHub Actions</span>
+          <span class="chip">Production ML Pipelines</span><span class="chip">Model Monitoring</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-head"><div class="sk-cat-name">Analytics &amp; BI</div><div class="sk-cat-num">/ 06</div></div>
+        <div class="sk-list">
+          <span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Grafana</span><span class="chip">A/B Testing</span>
+          <span class="chip">Bayesian Methods</span><span class="chip">Cohort &amp; Funnel</span>
+          <span class="chip">GA4</span><span class="chip">Mixpanel</span><span class="chip">Hypothesis Testing</span><span class="chip">KPI Dashboards</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-head"><div class="sk-cat-name">Program Management</div><div class="sk-cat-num">/ 07</div></div>
+        <div class="sk-list">
+          <span class="chip">Schedule &amp; Milestone Tracking</span><span class="chip">Scope Management</span>
+          <span class="chip">Risk Assessment</span><span class="chip">Go / No-Go Sign-Off</span>
+          <span class="chip">Cross-Functional Coordination</span><span class="chip">Escalation &amp; Resolution</span>
+          <span class="chip">KPI / Metrics Reporting</span><span class="chip">JIRA</span><span class="chip">Confluence</span><span class="chip">Agile / Scrum</span>
+        </div>
+      </div>
+
+      <div class="sk-cat reveal">
+        <div class="sk-cat-head"><div class="sk-cat-name">Engineering &amp; Process</div><div class="sk-cat-num">/ 08</div></div>
+        <div class="sk-list">
+          <span class="chip">Value Stream Mapping</span><span class="chip">Lean Optimization</span>
+          <span class="chip">Root-Cause Analysis</span><span class="chip">Automated Validation</span>
+          <span class="chip">Production Monitoring</span><span class="chip">Stakeholder Reporting</span>
+          <span class="chip">Technical Writing</span><span class="chip">CAD / CAM Fundamentals</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- EDUCATION                                             -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="education" data-screen-label="Education">
+  <div class="shell">
+
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow"><span class="num">04</span> Academics</div>
+        <h2 class="section-title">School of <em>thought.</em></h2>
+      </div>
+      <div class="section-kicker">Two degrees,<br>one curiosity.</div>
+    </header>
+
+    <div class="edu-grid stagger">
+
+      <article class="edu-card reveal">
+        <div class="edu-meta"><span>Boston, MA</span><span>Expected May 2027</span></div>
+        <div class="edu-school">Northeastern University</div>
+        <div class="edu-deg">M.S. Information Systems</div>
+        <div class="edu-gpa">GPA &nbsp;·&nbsp; 4.00 / 4.00</div>
+        <div class="edu-cw">Machine Learning · Data Science Engineering · Algorithms &amp; Data Structures · Application Engineering · Business Analysis · Project Management</div>
+      </article>
+
+      <article class="edu-card reveal">
+        <div class="edu-meta"><span>Kolhapur, India</span><span>March 2022</span></div>
+        <div class="edu-school">Dr. D. Y. Patil College of Engineering</div>
+        <div class="edu-deg">B.E. Mechanical Engineering</div>
+        <div class="edu-cw">Machine Design · Manufacturing Processes · Mechanics of Materials · Thermodynamics · Fluid Mechanics · CAD/CAM · Industrial Engineering</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WINS                                                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="section" id="wins" data-screen-label="Wins">
+  <div class="shell">
+
+    <header class="section-head reveal">
+      <div>
+        <div class="section-eyebrow"><span class="num">05</span> On the Record</div>
+        <h2 class="section-title">Wins &amp; <em>recognition.</em></h2>
+      </div>
+      <div class="section-kicker">Past the proof-of-concept<br>stage.</div>
+    </header>
+
+    <div class="wins stagger">
+
+      <article class="win reveal">
+        <div class="win-head"><span>A / 01</span><span class="n">01</span></div>
+        <h3 class="win-title">3 production ML models, at scale.</h3>
+        <p class="win-desc">1M+ users across three shipped models — 7% retention lift, 12% churn reduction, 4pp conversion lift. <b>$200K+ cumulative, measurable impact.</b></p>
+      </article>
+
+      <article class="win reveal">
+        <div class="win-head"><span>A / 02</span><span class="n">02</span></div>
+        <h3 class="win-title">Google Play Users’ Choice Nominee · 2023.</h3>
+        <p class="win-desc"><i>Football World</i> — one of <b>eight apps globally nominated.</b> Owned the complete release lifecycle from alpha to production.</p>
+      </article>
+
+      <article class="win reveal">
+        <div class="win-head"><span>A / 03</span><span class="n">03</span></div>
+        <h3 class="win-title">Published researcher · IJET Vol. 8 (2022).</h3>
+        <p class="win-desc"><i>“Waste Reduction Using Value Stream Mapping.”</i> Applied VSM optimization to reduce lead time <b>27%</b> via bottleneck elimination and cross-functional coordination.</p>
+      </article>
+
+      <article class="win reveal">
+        <div class="win-head"><span>A / 04</span><span class="n">04</span></div>
+        <h3 class="win-title">Perfect GPA while shipping in production.</h3>
+        <p class="win-desc">Holding <b>4.0 / 4.0</b> at Northeastern while architecting and shipping <i>FirstApply</i> solo — real product, real users, real revenue pipeline.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CONTACT                                               -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="contact" id="contact" data-screen-label="Contact">
+  <div class="contact-inner">
+    <div class="section-eyebrow reveal"><span class="num">06</span> The Last Page</div>
+    <h2 class="contact-h reveal">Let’s build<br><em>something</em> good.</h2>
+    <p class="contact-sub reveal">
+      Open to SWE · MLE · Data Science roles — internship Summer ’26 &amp; full-time ’27.
+      I move fast and measure everything. Best way to reach me is email.
+    </p>
+
+    <a href="mailto:sawalwade.s@northeastern.edu" class="contact-cta reveal" data-magnetic>
+      sawalwade.s@northeastern.edu <span class="arr">→</span>
+    </a>
+
+    <div class="contact-links reveal">
+      <a href="tel:4088298844" class="c-link">📞 (408) 829-8844</a>
+      <a href="https://linkedin.com/in/sanmati-sawalwade" target="_blank" rel="noopener" class="c-link">↗ LinkedIn</a>
+      <a href="https://github.com/sanmati1997" target="_blank" rel="noopener" class="c-link">↗ GitHub</a>
+      <a href="https://firstapply-production-fb41.up.railway.app" target="_blank" rel="noopener" class="c-link">↗ FirstApply</a>
+    </div>
+
+    <div class="foot">
+      <span>© 2026 SANMATI RAJIV SAWALWADE</span>
+      <span>BUILT WITH SPACE GROTESK · JETBRAINS MONO</span>
+      <span><a href="editorial.html">↗ EDITORIAL VERSION</a></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
