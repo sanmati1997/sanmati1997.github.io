@@ -186,17 +186,18 @@
 
       <article class="proj reveal">
         <div class="proj-head"><span class="num">P / 02</span><span>Deep Learning · Medical</span></div>
-        <h3 class="proj-title">COVID-19 CT scan <em>classifier</em></h3>
+        <h3 class="proj-title">COVID-19 CT Scan Classification | <em>Medical Imaging Deep Learning</em></h3>
         <p class="proj-desc">
-          Triages chest CT scans into COVID / Pneumonia / Normal. Fine-tuned EfficientNetB0 via two-stage transfer
-          learning with class-weighted loss; robustness validated with 5-fold stratified CV.
+          Built deep learning classifier on the COVIDx CT dataset triaging chest CT scans into COVID-19 / Pneumonia / Normal. Fine-tuned EfficientNetB0 via two-stage transfer learning with class-weighted loss, achieving <strong>93.4% test accuracy</strong> (0.91 to 0.97 per-class F1) and validated robustness with 5-fold stratified CV (86.7% ± 1.2%).
         </p>
         <div class="proj-stack">
-          <span class="chip">TensorFlow</span>
-          <span class="chip">EfficientNetB0</span>
+          <span class="chip">Python</span>
+          <span class="chip">TensorFlow/Keras</span>
+          <span class="chip">EfficientNet</span>
+          <span class="chip">Transfer Learning</span>
           <span class="chip">Scikit-learn</span>
         </div>
-        <div class="proj-stat">93.4% test acc · 0.91–0.97 F1 · 5-fold CV 86.7% ± 1.2%</div>
+        <div class="proj-stat">93.4% test acc · 0.91–0.97 per-class F1 · 5-fold CV 86.7% ± 1.2%</div>
         <div class="featured-links" style="margin-top:14px">
           <a href="https://colab.research.google.com/drive/1SNZSGbU5g7MrUKgvwjMoYAVE7JZannG7" target="_blank" rel="noopener" class="link-ghost">↗ Open in Colab</a>
         </div>
