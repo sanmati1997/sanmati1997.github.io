@@ -6,9 +6,9 @@ function updateClock() {
   if (!el) return;
   const t = new Date().toLocaleTimeString('en-US', {
     hour: '2-digit', minute: '2-digit', hour12: false,
-    timeZone: 'America/New_York'
+    timeZone: 'America/Los_Angeles'
   });
-  el.textContent = `BOS · ${t} ET`;
+  el.textContent = `SCC · ${t} PT`;
 }
 updateClock();
 setInterval(updateClock, 30000);
