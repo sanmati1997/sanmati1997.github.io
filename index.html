@@ -138,26 +138,27 @@
       <div class="featured-body">
         <span class="featured-tag"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;"></span> Live · Featured</span>
         <h3 class="featured-title">FirstApply — <em>real-time</em> internship intelligence platform.</h3>
-        <p class="featured-desc">
-          Full-stack platform scraping 6+ live job boards (LinkedIn · Indeed · Greenhouse · YC · HackerNews) in real time.
-          NLP-powered Claude scoring engine parses resumes, extracts skill vectors, and ranks 2,600+ roles against up to
-          5 candidate profiles with push-notification alerts.
-        </p>
+        <ul class="featured-desc" style="list-style:none;display:flex;flex-direction:column;gap:10px;padding:0">
+          <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--accent)">▸</span>Architected full-stack job intelligence platform scraping <strong>6+ live job boards</strong> (LinkedIn, Indeed, Greenhouse, YC, HackerNews) in real-time using Playwright and BeautifulSoup, aggregating <strong>2,600+ roles</strong> with deduplication and structured PostgreSQL storage</li>
+          <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--accent)">▸</span>Built NLP-powered resume scoring engine using the <strong>Claude API</strong> to parse resumes, extract skill/experience vectors, and score each job 0–100 against up to <strong>5 candidate profiles</strong> for personalized job-fit ranking</li>
+          <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;color:var(--accent)">▸</span>Engineered real-time alerting pipeline with <strong>near-zero notification latency</strong>; early applicants are <strong>3× more likely</strong> to receive callbacks</li>
+        </ul>
 
         <div class="featured-metrics">
           <div class="featured-metric"><span class="n">3×</span><span class="l">Callback Rate</span></div>
-          <div class="featured-metric"><span class="n">2.6K</span><span class="l">Roles Ranked Live</span></div>
+          <div class="featured-metric"><span class="n">2.6K+</span><span class="l">Roles Ranked Live</span></div>
           <div class="featured-metric"><span class="n">&lt; 1s</span><span class="l">Alert Latency</span></div>
         </div>
 
         <div class="featured-stack">
           <span class="chip">Python</span>
-          <span class="chip">FastAPI</span>
-          <span class="chip">Claude API</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">Playwright</span>
-          <span class="chip">Docker</span>
           <span class="chip">Node.js</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Claude API</span>
+          <span class="chip">Playwright</span>
+          <span class="chip">BeautifulSoup</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Docker</span>
         </div>
 
         <div class="featured-links">
