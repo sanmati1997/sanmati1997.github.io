@@ -38,18 +38,9 @@
 		/* ── Article width ── */
 		#main article { width: 60rem !important; max-width: 84vw !important; }
 
-		/* ── Avatar: photo ── */
-		#header .logo {
-			background: url('images/avatar.png') center bottom/180% no-repeat;
-			box-shadow: 0 0 40px rgba(139,92,246,0.5), 0 0 80px rgba(59,130,246,0.2);
-			animation: glowPulse 3s ease-in-out infinite;
-			border: 3px solid rgba(255,255,255,0.2);
-			overflow: hidden;
-		}
-		@keyframes glowPulse {
-			0%, 100% { box-shadow: 0 0 30px rgba(139,92,246,0.5), 0 0 60px rgba(59,130,246,0.2); }
-			50%       { box-shadow: 0 0 50px rgba(139,92,246,0.8), 0 0 100px rgba(59,130,246,0.3); }
-		}
+		/* ── No avatar ── */
+		#header .logo { display: none !important; }
+		#header { padding-top: 0.5rem; }
 
 		/* ── Name: gradient text ── */
 		#header h1 {
@@ -348,11 +339,10 @@
 
 	<!-- Header -->
 	<header id="header">
-		<div class="logo"></div>
 		<div class="content">
 			<div class="inner">
 				<div class="avail-pill">
-					<span class="avail-dot"></span> Available — Summer '26 &amp; Full-Time '27
+					<span class="avail-dot"></span> Available — Summer '26 &nbsp;·&nbsp; Fall '26 &nbsp;·&nbsp; Full-Time '27
 				</div>
 				<h1>Sanmati Sawalwade</h1>
 				<p style="letter-spacing:0.15em; font-size:0.85rem; color:rgba(255,255,255,0.55); margin-bottom:0.3rem;">
