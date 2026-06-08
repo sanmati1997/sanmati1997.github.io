@@ -590,7 +590,7 @@
 <script src="assets/js/vanta.birds.min.js"></script>
 
 <script>
-	window.__vanta = VANTA.BIRDS({
+	VANTA.BIRDS({
 		el: "#bg",
 		mouseControls: true,
 		touchControls: true,
@@ -726,100 +726,6 @@
 	}
 
 	requestAnimationFrame(draw);
-})();
-</script>
-
-<script>
-(function(){
-	var ov = document.createElement('canvas');
-	ov.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:50;pointer-events:none;';
-	document.body.appendChild(ov);
-	var ctx = ov.getContext('2d');
-	function resize(){ ov.width = window.innerWidth; ov.height = window.innerHeight; }
-	resize(); window.addEventListener('resize', resize);
-
-	var msgs = ['Hire Sanmati!', 'Hire me!'];
-
-	// Simulated boid — wanders naturally like a Vanta bird
-	var b = {
-		x: window.innerWidth * 0.3,
-		y: window.innerHeight * 0.3,
-		vx: 1.8, vy: -0.6,
-		ax: 0, ay: 0, t: 0
-	};
-
-	function stepBoid(){
-		b.t += 0.018;
-		// Gentle steering noise
-		b.ax = (Math.random()-0.5)*0.12 + Math.sin(b.t*0.7)*0.06;
-		b.ay = (Math.random()-0.5)*0.12 + Math.cos(b.t*0.5)*0.06;
-		b.vx += b.ax; b.vy += b.ay;
-		// Speed cap
-		var spd = Math.sqrt(b.vx*b.vx+b.vy*b.vy);
-		if(spd>2.5){ b.vx=b.vx/spd*2.5; b.vy=b.vy/spd*2.5; }
-		if(spd<0.8){ b.vx=b.vx/spd*0.8; b.vy=b.vy/spd*0.8; }
-		// Soft boundary wrap
-		var pad=80;
-		if(b.x<pad) b.vx+=0.15; if(b.x>ov.width-pad) b.vx-=0.15;
-		if(b.y<pad) b.vy+=0.12; if(b.y>ov.height-pad*0.6) b.vy-=0.12;
-		b.x+=b.vx; b.y+=b.vy;
-	}
-
-	function rr(x,y,w,h,r){
-		ctx.beginPath();
-		ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
-		ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-		ctx.lineTo(x+w,y+h-r);
-		ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-		ctx.lineTo(x+r,y+h);
-		ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-		ctx.lineTo(x,y+r);
-		ctx.quadraticCurveTo(x,y,x+r,y);
-		ctx.closePath();
-	}
-
-	function drawBubble(text, px, py, alpha){
-		ctx.font='700 13px "Space Grotesk",sans-serif';
-		var tw=ctx.measureText(text).width;
-		var padx=11,pady=6,bw=tw+padx*2,bh=26,br=bh/2;
-		var bx=px-bw/2, by=py-bh-18;
-		ctx.save(); ctx.globalAlpha=alpha;
-		ctx.fillStyle='rgba(144,205,244,0.15)';
-		rr(bx,by,bw,bh,br); ctx.fill();
-		ctx.strokeStyle='rgba(144,205,244,0.9)'; ctx.lineWidth=1.3;
-		rr(bx,by,bw,bh,br); ctx.stroke();
-		ctx.beginPath();
-		ctx.moveTo(px-5,by+bh); ctx.lineTo(px+1,by+bh+11); ctx.lineTo(px+8,by+bh);
-		ctx.fillStyle='rgba(144,205,244,0.15)'; ctx.fill();
-		ctx.strokeStyle='rgba(144,205,244,0.9)'; ctx.lineWidth=1.3; ctx.stroke();
-		ctx.fillStyle='#90cdf4'; ctx.textAlign='center'; ctx.textBaseline='middle';
-		ctx.fillText(text, px, by+bh/2);
-		ctx.restore();
-	}
-
-	var bubble = { text: msgs[0], life:0, maxLife:220, alpha:0, cooldown:0, active:false };
-
-	function loop(){
-		ctx.clearRect(0,0,ov.width,ov.height);
-		stepBoid();
-
-		if(!bubble.active){
-			bubble.cooldown--;
-			if(bubble.cooldown<=0){
-				bubble.active=true; bubble.life=0;
-				bubble.text=msgs[Math.floor(Math.random()*msgs.length)];
-			}
-		} else {
-			bubble.life++;
-			var fi=22, fo=bubble.maxLife-28;
-			bubble.alpha = bubble.life<fi ? bubble.life/fi : (bubble.life>fo ? Math.max(0,1-(bubble.life-fo)/28) : 1);
-			drawBubble(bubble.text, b.x, b.y, bubble.alpha);
-			if(bubble.life>=bubble.maxLife){ bubble.active=false; bubble.cooldown=160; }
-		}
-		requestAnimationFrame(loop);
-	}
-
-	setTimeout(loop, 3200);
 })();
 </script>
 
