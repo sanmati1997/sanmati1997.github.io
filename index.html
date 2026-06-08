@@ -590,7 +590,7 @@
 <script src="assets/js/vanta.birds.min.js"></script>
 
 <script>
-	VANTA.BIRDS({
+	window.__vanta = VANTA.BIRDS({
 		el: "#bg",
 		mouseControls: true,
 		touchControls: true,
@@ -731,102 +731,78 @@
 
 <script>
 (function(){
-	var c = document.createElement('canvas');
-	c.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:50;pointer-events:none;';
-	document.body.appendChild(c);
-	var ctx = c.getContext('2d');
-	function resize(){ c.width = window.innerWidth; c.height = window.innerHeight; }
+	var ov = document.createElement('canvas');
+	ov.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:50;pointer-events:none;';
+	document.body.appendChild(ov);
+	var ctx = ov.getContext('2d');
+	function resize(){ ov.width = window.innerWidth; ov.height = window.innerHeight; }
 	resize(); window.addEventListener('resize', resize);
 
-	var hireTexts = ['Hire Sanmati!', 'Hire me! 👀', 'Hire her ✨', 'She\'s the one 🐦'];
-	var otherTexts = ['meow', 'tweet!', 'chirp~', 'weeee!', 'so high!', 'where am I?', '*flap flap*', 'zoom zoom', 'cold up here~', 'look at me!'];
+	var msgs = ['Hire Sanmati!', 'Hire me!'];
+	var bubble = null, cooldown = 0;
 
-	var bubbles = [], spawnTimer = 0, spawnEvery = 100;
-
-	function roundRect(x, y, w, h, r) {
+	function rr(x,y,w,h,r){
 		ctx.beginPath();
-		ctx.moveTo(x + r, y);
-		ctx.lineTo(x + w - r, y);
-		ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-		ctx.lineTo(x + w, y + h - r);
-		ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-		ctx.lineTo(x + r, y + h);
-		ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-		ctx.lineTo(x, y + r);
-		ctx.quadraticCurveTo(x, y, x + r, y);
+		ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+		ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+		ctx.lineTo(x+w,y+h-r);
+		ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+		ctx.lineTo(x+r,y+h);
+		ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+		ctx.lineTo(x,y+r);
+		ctx.quadraticCurveTo(x,y,x+r,y);
 		ctx.closePath();
 	}
 
-	function spawn() {
-		var isHire = Math.random() < 0.5;
-		var list = isHire ? hireTexts : otherTexts;
-		var sc = 0.65 + Math.random() * 0.9;
-		bubbles.push({
-			x: c.width * 0.08 + Math.random() * c.width * 0.84,
-			y: c.height * 0.06 + Math.random() * c.height * 0.65,
-			text: list[Math.floor(Math.random() * list.length)],
-			sc: sc, isHire: isHire,
-			life: 0, maxLife: 110 + Math.floor(Math.random() * 70), alpha: 0
-		});
+	function project(boid, vanta){
+		var v = boid.position.clone();
+		v.project(vanta.camera);
+		return { x:(v.x+1)/2*ov.width, y:(-v.y+1)/2*ov.height };
 	}
 
-	function drawBubble(b) {
-		var fs = Math.round(b.sc * 12);
-		ctx.font = '600 ' + fs + 'px "Space Grotesk", sans-serif';
+	function draw(b, pos){
+		ctx.font = '700 13px "Space Grotesk",sans-serif';
 		var tw = ctx.measureText(b.text).width;
-		var px = 9 * b.sc, py = 6 * b.sc;
-		var bw = tw + px * 2, bh = fs + py * 2, br = bh / 2;
-		var bx = b.x - bw / 2, by = b.y - bh - 10 * b.sc;
-
-		ctx.save();
-		ctx.globalAlpha = b.alpha;
-
-		// Bubble fill + border
-		ctx.fillStyle = b.isHire ? 'rgba(144,205,244,0.18)' : 'rgba(255,255,255,0.1)';
-		roundRect(bx, by, bw, bh, br);
-		ctx.fill();
-		ctx.strokeStyle = b.isHire ? 'rgba(144,205,244,0.85)' : 'rgba(255,255,255,0.45)';
-		ctx.lineWidth = b.sc * 1.1;
-		roundRect(bx, by, bw, bh, br);
-		ctx.stroke();
-
-		// Tail
-		var tx = b.x - bw * 0.15;
+		var px=11, py=7, bw=tw+px*2, bh=20+py*2, br=bh/2;
+		var bx=pos.x-bw/2, by=pos.y-bh-16;
+		ctx.save(); ctx.globalAlpha = b.alpha;
+		ctx.fillStyle='rgba(144,205,244,0.15)';
+		rr(bx,by,bw,bh,br); ctx.fill();
+		ctx.strokeStyle='rgba(144,205,244,0.9)'; ctx.lineWidth=1.3;
+		rr(bx,by,bw,bh,br); ctx.stroke();
+		// tail
 		ctx.beginPath();
-		ctx.moveTo(tx - 4 * b.sc, by + bh);
-		ctx.lineTo(tx, by + bh + 9 * b.sc);
-		ctx.lineTo(tx + 6 * b.sc, by + bh);
-		ctx.fillStyle = b.isHire ? 'rgba(144,205,244,0.18)' : 'rgba(255,255,255,0.1)';
-		ctx.fill();
-		ctx.strokeStyle = b.isHire ? 'rgba(144,205,244,0.85)' : 'rgba(255,255,255,0.45)';
-		ctx.lineWidth = b.sc * 1.1;
-		ctx.stroke();
-
-		// Text
-		ctx.fillStyle = b.isHire ? '#90cdf4' : 'rgba(255,255,255,0.88)';
-		ctx.textAlign = 'center';
-		ctx.textBaseline = 'middle';
-		ctx.fillText(b.text, b.x, by + bh / 2);
+		ctx.moveTo(pos.x-5,by+bh); ctx.lineTo(pos.x,by+bh+11); ctx.lineTo(pos.x+7,by+bh);
+		ctx.fillStyle='rgba(144,205,244,0.15)'; ctx.fill();
+		ctx.strokeStyle='rgba(144,205,244,0.9)'; ctx.lineWidth=1.3; ctx.stroke();
+		ctx.fillStyle='#90cdf4'; ctx.textAlign='center'; ctx.textBaseline='middle';
+		ctx.fillText(b.text, pos.x, by+bh/2);
 		ctx.restore();
 	}
 
-	function loop() {
-		ctx.clearRect(0, 0, c.width, c.height);
-		spawnTimer++;
-		if (spawnTimer >= spawnEvery && bubbles.length < 3) {
-			spawn(); spawnTimer = 0; spawnEvery = 90 + Math.floor(Math.random() * 120);
+	function loop(vanta){
+		ctx.clearRect(0,0,ov.width,ov.height);
+		if(!bubble){
+			if(cooldown-- <= 0 && vanta.boids && vanta.boids.length){
+				var boid = vanta.boids[Math.floor(Math.random()*vanta.boids.length)];
+				bubble = { boid:boid, text:msgs[Math.floor(Math.random()*msgs.length)], life:0, maxLife:200, alpha:0 };
+			}
+		} else {
+			bubble.life++;
+			var fi=20, fo=bubble.maxLife-25;
+			bubble.alpha = bubble.life<fi ? bubble.life/fi : (bubble.life>fo ? Math.max(0,1-(bubble.life-fo)/25) : 1);
+			var pos = project(bubble.boid, vanta);
+			if(pos.x>-50 && pos.x<ov.width+50 && pos.y>-50 && pos.y<ov.height+50) draw(bubble, pos);
+			if(bubble.life >= bubble.maxLife){ bubble=null; cooldown=180; }
 		}
-		bubbles = bubbles.filter(function(b) {
-			b.life++;
-			var fi = 18, fo = b.maxLife - 22;
-			b.alpha = b.life < fi ? b.life / fi : (b.life > fo ? Math.max(0, 1 - (b.life - fo) / 22) : 1);
-			drawBubble(b);
-			return b.life < b.maxLife;
-		});
-		requestAnimationFrame(loop);
+		requestAnimationFrame(function(){ loop(vanta); });
 	}
 
-	setTimeout(function(){ requestAnimationFrame(loop); }, 2800);
+	setTimeout(function(){
+		var vanta = window.__vanta;
+		if(vanta && vanta.boids) requestAnimationFrame(function(){ loop(vanta); });
+		else setTimeout(function(){ vanta=window.__vanta; if(vanta) requestAnimationFrame(function(){ loop(vanta); }); }, 2000);
+	}, 2500);
 })();
 </script>
 
