@@ -631,5 +631,60 @@
 	});
 </script>
 
+<script>
+(function(){
+	var c = document.createElement('canvas');
+	c.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;pointer-events:none;';
+	document.body.prepend(c);
+	var ctx = c.getContext('2d');
+	c.width = window.innerWidth;
+	c.height = window.innerHeight;
+
+	var stars = Array.from({length: 140}, function() {
+		return {
+			x: Math.random() * c.width,
+			y: Math.random() * c.height,
+			r: Math.random() * 1.8 + 0.4,
+			peak: Math.random() * 0.75 + 0.25,
+			delay: Math.floor(Math.random() * 50),
+			alpha: 0
+		};
+	});
+
+	var frame = 0, total = 160;
+
+	function draw() {
+		ctx.clearRect(0, 0, c.width, c.height);
+		frame++;
+		stars.forEach(function(s) {
+			var f = frame - s.delay;
+			if (f <= 0) return;
+			if (f < 25) s.alpha = (f / 25) * s.peak;
+			else s.alpha = s.peak * Math.max(0, 1 - (f - 25) / (total - 25 - s.delay));
+
+			ctx.save();
+			ctx.globalAlpha = s.alpha;
+			ctx.fillStyle = '#c8e8ff';
+			ctx.beginPath();
+			ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+			ctx.fill();
+			if (s.r > 1.2) {
+				ctx.strokeStyle = '#c8e8ff';
+				ctx.lineWidth = 0.6;
+				ctx.beginPath();
+				ctx.moveTo(s.x - s.r * 3.5, s.y); ctx.lineTo(s.x + s.r * 3.5, s.y);
+				ctx.moveTo(s.x, s.y - s.r * 3.5); ctx.lineTo(s.x, s.y + s.r * 3.5);
+				ctx.stroke();
+			}
+			ctx.restore();
+		});
+		if (frame < total) requestAnimationFrame(draw);
+		else c.remove();
+	}
+
+	requestAnimationFrame(draw);
+})();
+</script>
+
 </body>
 </html>
