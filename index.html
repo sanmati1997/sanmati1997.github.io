@@ -506,7 +506,10 @@
 				</div>
 
 				<div class="proj-card">
-					<div class="proj-top"><span class="proj-name">Medical Triage Tool — COVID CT Scanner</span></div>
+					<div class="proj-top">
+						<span class="proj-name">Medical Triage Tool — COVID CT Scanner</span>
+						<a class="proj-link" href="https://colab.research.google.com/drive/1SNZSGbU5g7MrUKgvwjMoYAVE7JZannG7" target="_blank" rel="noopener">Colab ↗</a>
+					</div>
 					<p class="proj-desc">Radiologists face overwhelming scan volume in a pandemic. Built a triage tool that classifies chest CT scans into COVID / Pneumonia / Normal — giving clinicians a prioritized queue so highest-risk patients are seen first.</p>
 					<div class="proj-stat">93.4% test accuracy &nbsp;·&nbsp; 0.91–0.97 per-class F1</div>
 					<div class="proj-tags"><span class="proj-tag">TensorFlow</span><span class="proj-tag">EfficientNetB0</span><span class="proj-tag">Scikit-learn</span></div>
@@ -654,11 +657,41 @@
 		};
 	});
 
-	var frame = 0, total = 160;
+	var smoke = Array.from({length: 18}, function() {
+		return {
+			x: Math.random() * c.width,
+			y: c.height * 0.3 + Math.random() * c.height * 0.5,
+			r: 80 + Math.random() * 120,
+			vx: (Math.random() - 0.5) * 0.4,
+			vy: -(Math.random() * 0.3 + 0.1),
+			peak: Math.random() * 0.09 + 0.04,
+			delay: Math.floor(Math.random() * 30),
+			alpha: 0
+		};
+	});
+
+	var frame = 0, total = 200;
 
 	function draw() {
 		ctx.clearRect(0, 0, c.width, c.height);
 		frame++;
+
+		smoke.forEach(function(s) {
+			var f = frame - s.delay;
+			if (f <= 0) return;
+			if (f < 40) s.alpha = (f / 40) * s.peak;
+			else s.alpha = s.peak * Math.max(0, 1 - (f - 40) / (total - 40));
+			s.x += s.vx; s.y += s.vy;
+
+			var g = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r);
+			g.addColorStop(0, 'rgba(180,220,255,' + s.alpha + ')');
+			g.addColorStop(1, 'rgba(100,160,220,0)');
+			ctx.fillStyle = g;
+			ctx.beginPath();
+			ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+			ctx.fill();
+		});
+
 		stars.forEach(function(s) {
 			var f = frame - s.delay;
 			if (f <= 0) return;
@@ -681,6 +714,7 @@
 			}
 			ctx.restore();
 		});
+
 		if (frame < total) requestAnimationFrame(draw);
 		else c.remove();
 	}
