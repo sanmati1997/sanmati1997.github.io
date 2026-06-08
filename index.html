@@ -114,71 +114,6 @@
 		.t-out { color: #86efac; }
 		.t-cursor { display: inline-block; width: 7px; height: 1em; background: #a5b4fc; animation: blink 1s step-end infinite; vertical-align: text-bottom; }
 
-		/* ── Rockets row ── */
-		.rockets-row {
-			display: flex;
-			justify-content: center;
-			align-items: flex-end;
-			gap: 1.6rem;
-			margin-top: 1.4rem;
-			margin-bottom: -8px;
-		}
-		.rocket {
-			font-size: 1.6rem;
-			display: inline-block;
-			animation: rocketBob 2s ease-in-out infinite;
-			cursor: default;
-			user-select: none;
-			filter: drop-shadow(0 0 8px rgba(139,92,246,0.6));
-		}
-		.rocket:nth-child(2) { animation-delay: 0.3s; }
-		.rocket:nth-child(3) { animation-delay: 0.6s; }
-		.rocket:nth-child(4) { animation-delay: 0.9s; }
-		@keyframes rocketBob {
-			0%, 100% { transform: translateY(0) rotate(-45deg); }
-			50%       { transform: translateY(-8px) rotate(-45deg); }
-		}
-		#bless-wrap { position: relative; display: inline-flex; align-items: flex-end; cursor: pointer; }
-		#bless-bubble {
-			position: absolute;
-			bottom: calc(100% + 10px);
-			left: 50%;
-			transform: translateX(-50%);
-			background: rgba(139,92,246,0.15);
-			backdrop-filter: blur(12px);
-			border: 1px solid rgba(139,92,246,0.4);
-			border-radius: 12px;
-			padding: 7px 14px;
-			font-size: 0.75rem;
-			color: #e2d9f3;
-			white-space: nowrap;
-			line-height: 1.5;
-			text-align: center;
-			box-shadow: 0 4px 20px rgba(139,92,246,0.2);
-		}
-		#bless-bubble::after {
-			content: '';
-			position: absolute;
-			bottom: -6px;
-			left: 50%;
-			transform: translateX(-50%);
-			border: 6px solid transparent;
-			border-top-color: rgba(139,92,246,0.4);
-			border-bottom: none;
-		}
-		.plus-one {
-			position: fixed;
-			font-size: 1.3rem;
-			font-weight: bold;
-			color: #a5b4fc;
-			pointer-events: none;
-			z-index: 9999;
-			animation: floatUp 0.9s ease forwards;
-		}
-		@keyframes floatUp {
-			0%   { transform: translateY(0) scale(1); opacity: 1; }
-			100% { transform: translateY(-80px) scale(1.4); opacity: 0; }
-		}
 
 		/* ── Bounce letters ── */
 		@keyframes letterBounce {
@@ -361,16 +296,6 @@
 
 			</div>
 
-			<!-- Rockets -->
-			<div class="rockets-row">
-				<span class="rocket">🚀</span>
-				<span class="rocket">🚀</span>
-				<span class="rocket">🚀</span>
-				<div id="bless-wrap">
-					<div id="bless-bubble">Ship it! 🚀</div>
-					<span class="rocket" style="animation-delay:1.2s; cursor:pointer;">🚀</span>
-				</div>
-			</div>
 		</div>
 		<nav>
 			<ul>
@@ -622,19 +547,6 @@
 		document.getElementById('peek-bubble').textContent = catMsgs[catIdx];
 	});
 
-	// Blessing rocket
-	var msgs = ["Good luck is coming ✨","The universe heard you 🌟","Fortune follows boldness 🚀","Ship it and succeed 💫","Stars aligned for you 🌌"];
-	document.getElementById('bless-wrap').addEventListener('click', function(e) {
-		var bubble = document.getElementById('bless-bubble');
-		var p = document.createElement('div');
-		p.className = 'plus-one';
-		p.textContent = '🚀';
-		p.style.left = (e.clientX - 10) + 'px';
-		p.style.top  = (e.clientY - 10) + 'px';
-		document.body.appendChild(p);
-		setTimeout(function(){ p.remove(); }, 950);
-		bubble.innerHTML = msgs[Math.floor(Math.random() * msgs.length)];
-	});
 </script>
 
 <script>
