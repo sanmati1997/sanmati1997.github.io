@@ -28,9 +28,8 @@
 		}
 		#bg canvas { position:absolute; top:0; left:0; width:100%!important; height:100%!important; z-index:0; }
 		#bg:after {
-			background-image:
-				radial-gradient(ellipse 80% 40% at 50% 100%, rgba(14,116,144,0.18) 0%, transparent 70%),
-				radial-gradient(ellipse 60% 35% at 50% 0%, rgba(30,58,100,0.22) 0%, transparent 70%) !important;
+			background: none !important;
+			background-image: none !important;
 			pointer-events: none;
 			z-index: 3;
 		}
@@ -358,11 +357,6 @@
 					<span><b>4</b>products shipped</span>
 				</div>
 
-				<!-- Live terminal widget -->
-				<div class="terminal-widget">
-					<div class="t-bar"><span></span><span></span><span></span></div>
-					<div class="t-line"><span class="t-prompt">▸</span>&nbsp;<span class="t-cmd">firstapply</span>&nbsp;<span class="t-out" id="term-out">scraping LinkedIn...</span><span class="t-cursor"></span></div>
-				</div>
 			</div>
 
 			<!-- Rockets -->
@@ -611,23 +605,6 @@
 		cohesion: 20
 	});
 
-	// Terminal typewriter
-	var lines = [
-		"scraping LinkedIn... found 3 new jobs ✓",
-		"scoring against resume... 94/100 match ✓",
-		"push notification sent in 0.8s ✓",
-		"new user signed up · total: 17 ✓",
-		"re-scoring all users... done ✓",
-		"scraping YC jobs... found 12 roles ✓",
-	];
-	var i = 0;
-	setInterval(function() {
-		i = (i + 1) % lines.length;
-		var el = document.getElementById('term-out');
-		if (el) { el.style.opacity = 0; setTimeout(function(){ el.textContent = lines[i]; el.style.opacity = 1; }, 300); }
-	}, 2500);
-	var el = document.getElementById('term-out');
-	if (el) el.style.transition = 'opacity 0.3s';
 
 	// Peeking cat click messages
 	var catMsgs = ["What's up? 👋","Hello there! 😺","You found me! 🐱","Hire Sanmati! 😄","Meow~ 🐾","Nice portfolio huh? 😏"];
