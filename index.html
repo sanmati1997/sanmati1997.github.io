@@ -7,7 +7,7 @@
 <head>
 	<title>Sanmati Sawalwade</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Product Engineer & Builder. MS @ Northeastern. Founded & shipped products to 1M+ users, $200K+ impact." />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -261,11 +261,24 @@
 		#peek-cat:hover #peek-bubble { opacity: 1; }
 
 		@media screen and (max-width: 736px) {
+			html, body { overflow-x: hidden; }
+			#main article { max-width: 92vw !important; }
 			.metrics { grid-template-columns: repeat(2,1fr); }
 			.contact-grid { grid-template-columns: 1fr; }
-			.header-stats { gap: 1.2rem; }
+			.header-stats { flex-wrap: wrap; gap: 0.9rem 1.4rem; }
 			.terminal-widget { font-size: 0.65rem; }
-			#peek-cat { right: 16px; width: 100px; }
+			#peek-cat { display: none; }
+			/* stack the name/date and project/link rows so they stop cramping */
+			.exp-top, .proj-top { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+			#header h1 { letter-spacing: 0.16rem !important; }
+			/* the resume PDF must not force a 1000px-tall box on a phone */
+			#resume iframe { min-height: 0 !important; height: 68vh !important; }
+		}
+		@media screen and (max-width: 480px) {
+			#main article { max-width: 94vw !important; }
+			#header h1 { font-size: 1.7rem !important; letter-spacing: 0.1rem !important; }
+			.exp-co, .proj-name { font-size: 0.9rem; }
+			.t-line { flex-wrap: wrap; }
 		}
 	</style>
 </head>
